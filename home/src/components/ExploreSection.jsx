@@ -4,9 +4,9 @@ import NorthEastIcon from "@mui/icons-material/NorthEast";
 const ExploreSection = () => {
   return (
     <Box sx={{ px: { xs: 2, md: 10 }, py: 10 }}>
-      <Grid container spacing={4}>
+      <Grid container spacing={2} sx={{ height: "100%" }}>
         {/* Left Side - Image + CTA */}
-        <Grid item xs={12} md={6}>
+        <Grid item size={{ xs: 12, md: 6 }} sx={{ position: "relative" }}>
           <Box
             sx={{
               bgcolor: "#EDE1D9",
@@ -72,52 +72,54 @@ const ExploreSection = () => {
         </Grid>
 
         {/* Right Side - Cards */}
-        <Grid item xs={12} md={6}>
+        <Grid container size={{ xs: 12, md: 6 }} sx={{ height: "100%" }}>
           <Grid container spacing={2} sx={{ height: "100%" }}>
             {/* Top Row */}
-            <Grid item xs={6}>
-              <Paper
-                elevation={0}
-                sx={{
-                  bgcolor: "#C9F3FF",
-                  borderRadius: 4,
-                  p: 3,
-                  height: "100%",
-                  minHeight: 150,
-                }}
-              >
-                <Typography fontWeight={700} fontSize={18}>
-                  Read our blog <NorthEastIcon fontSize="small" />
-                </Typography>
-                <Typography mt={2}>
-                  We have share our journey and some story
-                </Typography>
-              </Paper>
-            </Grid>
+            <Grid container size={6} rowGap={2}>
+              <Grid item size={12}>
+                <Paper
+                  elevation={0}
+                  sx={{
+                    bgcolor: "#C9F3FF",
+                    borderRadius: 4,
+                    p: 3,
+                    height: "100%",
+                    minHeight: 150,
+                  }}
+                >
+                  <Typography fontWeight={700} fontSize={18}>
+                    Read our blog <NorthEastIcon fontSize="small" />
+                  </Typography>
+                  <Typography mt={2}>
+                    We have share our journey and some story
+                  </Typography>
+                </Paper>
+              </Grid>
 
-            <Grid item xs={6}>
-              <Paper
-                elevation={0}
-                sx={{
-                  bgcolor: "#DBFCD4",
-                  borderRadius: 4,
-                  p: 3,
-                  height: "100%",
-                  minHeight: 150,
-                }}
-              >
-                <Typography fontWeight={700} fontSize={18}>
-                  See our workflow <NorthEastIcon fontSize="small" />
-                </Typography>
-                <Typography mt={2}>
-                  It’s a must to that we would like to share our workflow to
-                  believe you
-                </Typography>
-              </Paper>
+              <Grid item size={12}>
+                <Paper
+                  elevation={0}
+                  sx={{
+                    bgcolor: "#DBFCD4",
+                    borderRadius: 4,
+                    p: 3,
+                    height: "100%",
+                    minHeight: 150,
+                  }}
+                >
+                  <Typography fontWeight={700} fontSize={18}>
+                    See our workflow <NorthEastIcon fontSize="small" />
+                  </Typography>
+                  <Typography mt={2}>
+                    It’s a must to that we would like to share our workflow to
+                    believe you
+                  </Typography>
+                </Paper>
+              </Grid>
             </Grid>
 
             {/* Full Height Right Card */}
-            <Grid item xs={12}>
+            <Grid container size={6} sx={{ height: "100%" }}>
               <Paper
                 elevation={0}
                 sx={{
