@@ -21,7 +21,7 @@ const ExploreSection = () => {
           >
             <Box
               component="img"
-              src="https://images.pexels.com/photos/697259/pexels-photo-697259.jpeg"
+              src="https://images.pexels.com/photos/2108845/pexels-photo-2108845.jpeg?auto=compress&cs=tinysrgb&w=600"
               alt="Traveler"
               sx={{
                 width: "100%",

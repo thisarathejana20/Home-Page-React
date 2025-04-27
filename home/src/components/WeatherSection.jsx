@@ -19,65 +19,142 @@ const cities = [
 
 const WeatherSection = () => {
   return (
-    <Box sx={{ px: { xs: 2, md: 6 }, py: 6 }}>
-      <Grid container spacing={3} size={{ xs: 12, md: 6 }}>
-        {cities.map((city, i) => (
-          <Grid item xs={12} md={6} key={i}>
-            <Paper elevation={3} sx={{ borderRadius: 3, overflow: "hidden" }}>
-              <Box
-                component="img"
-                src={city.image}
-                alt={city.name}
-                sx={{ width: "100%", height: 200, objectFit: "cover" }}
-              />
-              <Box sx={{ p: 3 }}>
-                <Typography variant="h6" fontWeight={600}>
-                  {city.name}
-                </Typography>
-                <Typography variant="subtitle1" color="text.secondary">
-                  {city.temp} • {city.description}
-                </Typography>
-              </Box>
+    <Box sx={{ px: { xs: 2, md: 8 }, py: { xs: 8, md: 12 } }}>
+      <Grid container spacing={6} alignItems="center">
+        {/* Left Side */}
+        <Grid item xs={12} md={6}>
+          <Box sx={{ position: "relative" }}>
+            <Paper
+              elevation={3}
+              sx={{
+                p: 4,
+                borderRadius: 5,
+                bgcolor: "#fff",
+                width: { xs: "100%", md: 400 },
+                mb: 4,
+              }}
+            >
+              <Typography
+                variant="h2"
+                fontWeight={900}
+                color="primary"
+                sx={{ mb: 2 }}
+              >
+                -12°C
+              </Typography>
+              <Grid container spacing={2}>
+                <Grid item xs={6}>
+                  <Typography variant="body1" fontWeight={600}>
+                    Wind
+                  </Typography>
+                  <Typography variant="h6" color="text.secondary">
+                    13 km
+                  </Typography>
+                </Grid>
+                <Grid item xs={6}>
+                  <Typography variant="body1" fontWeight={600}>
+                    Snow
+                  </Typography>
+                  <Typography variant="h6" color="text.secondary">
+                    80 cm
+                  </Typography>
+                </Grid>
+              </Grid>
             </Paper>
-          </Grid>
-        ))}
+
+            {/* City Cards */}
+            <Grid container spacing={3}>
+              {cities.map((city, i) => (
+                <Grid item xs={12} md={6} key={i}>
+                  <Paper
+                    elevation={3}
+                    sx={{
+                      borderRadius: 4,
+                      overflow: "hidden",
+                      bgcolor: "#fff",
+                    }}
+                  >
+                    <Box
+                      component="img"
+                      src={city.image}
+                      alt={city.name}
+                      sx={{
+                        width: "100%",
+                        height: 150,
+                        objectFit: "cover",
+                      }}
+                    />
+                    <Box sx={{ p: 2 }}>
+                      <Typography variant="h6" fontWeight={700}>
+                        {city.name}
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        color="text.secondary"
+                        sx={{ mt: 1 }}
+                      >
+                        YVR → LAX{city.name === "Morocco" ? " → DXB" : ""}
+                      </Typography>
+                    </Box>
+                  </Paper>
+                </Grid>
+              ))}
+            </Grid>
+          </Box>
+        </Grid>
+
+        {/* Right Side */}
         <Grid item xs={12} md={6}>
           <Typography
-            variant="h6"
-            fontWeight={500}
+            variant="subtitle1"
+            fontWeight={600}
             color="text.secondary"
-            sx={{ mb: 2, textAlign: "left" }}
+            sx={{ textTransform: "uppercase", mb: 2 }}
           >
             Get Connected
           </Typography>
-          <Typography
-            variant="h4"
-            fontWeight={900}
-            sx={{ mb: 2, textAlign: "left" }}
-          >
-            It is better to travel well than to arrive.
+          <Typography variant="h3" fontWeight={900} sx={{ mb: 3 }}>
+            It is better to <br /> travel well than <br /> to arrive
           </Typography>
-          <Typography
-            variant="body1"
-            fontWeight={400}
-            sx={{ mb: 2, textAlign: "left" }}
-          >
+          <Typography variant="body1" color="text.secondary" sx={{ mb: 4 }}>
             Your ultimate travel companion. Carries all the information you need
-            while traveling.
+            while travelling.
           </Typography>
-          <Grid
-            container
-            spacing={2}
-            sx={{ mt: 2, display: "flex", alignItems: "center" }}
-          >
+          <Grid container spacing={2}>
             <Grid item>
-              <Button variant="outlined" color="white" size="large">
-                Get it on Play Store
+              <Button
+                variant="outlined"
+                size="large"
+                sx={{
+                  borderRadius: 3,
+                  borderColor: "#ccc",
+                  color: "#000",
+                  textTransform: "none",
+                  px: 3,
+                  py: 1.5,
+                  fontWeight: 600,
+                }}
+                // startIcon={<GoogleIcon />}
+              >
+                Get it from Google Play
               </Button>
             </Grid>
             <Grid item>
-              <Button variant="outlined" color="white" size="large">
-                Download App
+              <Button
+                variant="outlined"
+                size="large"
+                sx={{
+                  borderRadius: 3,
+                  borderColor: "#ccc",
+                  color: "#000",
+                  textTransform: "none",
+                  px: 3,
+                  py: 1.5,
+                  fontWeight: 600,
+                }}
+                // startIcon={<AppleIcon />}
+              >
+                Download on the Apple Store
               </Button>
             </Grid>
           </Grid>

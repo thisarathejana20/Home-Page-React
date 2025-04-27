@@ -1,48 +1,104 @@
-import { Box, Typography, Button, Paper } from "@mui/material";
+import { Box, Typography, Button } from "@mui/material";
 const FlightDeals = () => {
   return (
     <Box
       sx={{
-        px: { xs: 2, md: 6 },
-        py: 6,
-        display: "flex",
-        flexDirection: { xs: "column", md: "row" },
+        backgroundColor: "#1b0b8f",
+        backgroundImage:
+          "url('https://images.pexels.com/photos/8828328/pexels-photo-8828328.jpeg?auto=compress&cs=tinysrgb&w=600')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        borderRadius: 5,
+        overflow: "hidden",
+        p: { xs: 4, md: 8 },
+        display: { xs: "none", md: "flex" },
         alignItems: "center",
-        gap: 4,
+        position: "relative",
+        height: { xs: 400, md: 350 },
       }}
     >
-      <Box sx={{ flex: 1 }}>
-        <Typography variant="h5" fontWeight={600} mb={2}>
-          Book your flight with super deals 💸
-        </Typography>
-        <Typography variant="body1" color="text.secondary" mb={3}>
-          Get up to 50% off on selected destinations. Secure your seat early and
-          save more.
-        </Typography>
+      {/* Ticket and Text Section */}
+      <Box sx={{ flex: 1, zIndex: 2 }}>
+        <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
+          <img
+            src="https://images.pexels.com/photos/69866/pexels-photo-69866.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="ticket"
+            width={80}
+            height={80}
+          />
+        </Box>
         <Button
           variant="contained"
           sx={{
-            bgcolor: "#FF6B00",
-            borderRadius: 2,
+            backgroundColor: "#00e0ff",
+            color: "#000",
+            textTransform: "none",
+            borderRadius: "20",
             px: 4,
             py: 1.5,
             fontWeight: "bold",
+            fontSize: "1rem",
           }}
+          endIcon={<span>✈️</span>}
         >
-          Book Now
+          Get Tickets
         </Button>
+        <Typography
+          variant="h3"
+          fontWeight="bold"
+          sx={{ color: "white", mb: 2 }}
+        >
+          Find the <br /> best{" "}
+          <span style={{ fontWeight: "bolder" }}>deals</span>
+        </Typography>
       </Box>
 
-      <Paper
+      {/* Plane Image */}
+      <Box
         sx={{
-          flex: 1,
-          height: 280,
-          backgroundImage: `url('https://images.pexels.com/photos/1004584/pexels-photo-1004584.jpeg?auto=compress&cs=tinysrgb&w=600')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          borderRadius: 4,
+          position: "absolute",
+          top: { xs: "20%", md: "-10%" },
+          left: { xs: "30%", md: "45%" },
+          width: { xs: 200, md: 300 },
+          zIndex: 1,
+          transform: "rotate(20deg)",
         }}
-      />
+      >
+        <img
+          src="https://images.pexels.com/photos/31746666/pexels-photo-31746666/free-photo-of-jet2holidays-plane-on-airport-runway-in-daylight.jpeg?auto=compress&cs=tinysrgb&w=600"
+          alt="plane"
+          width={400}
+          height={400}
+        />
+      </Box>
+
+      {/* Sponsored Section */}
+      <Box sx={{ flex: 1, textAlign: "right", zIndex: 2 }}>
+        <Typography
+          variant="subtitle1"
+          sx={{
+            color: "white",
+            mb: 2,
+            fontWeight: 600,
+          }}
+        >
+          Sponsored by -
+        </Typography>
+        <Box sx={{ display: "inline-flex", alignItems: "center", gap: 2 }}>
+          <img
+            src="https://images.pexels.com/photos/26576975/pexels-photo-26576975/free-photo-of-close-up-of-a-logo-and-sign-on-white-paper-sheet.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="hawks"
+            width={100}
+            height={40}
+          />
+          <img
+            src="https://images.pexels.com/photos/385997/pexels-photo-385997.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="suitcase"
+            width={100}
+            height={100}
+          />
+        </Box>
+      </Box>
     </Box>
   );
 };
