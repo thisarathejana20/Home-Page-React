@@ -161,17 +161,15 @@ const Testimonials = () => {
         mt={6}
         sx={{ opacity: 0.5 }}
       >
-        {["amazon", "oyo", "airbnb", "tripadvisor", "expedia", "fedex"].map(
-          (brand) => (
-            <Typography
-              key={brand}
-              variant="body2"
-              sx={{ textTransform: "capitalize", fontSize: 18 }}
-            >
-              {brand}
-            </Typography>
-          )
-        )}
+        {["/amazon.svg", "/bnb.svg", "/cm1.svg", "/cm2.svg"].map((brand) => (
+          <Box
+            key={brand}
+            component="img"
+            src={brand}
+            alt={brand}
+            width={100}
+          />
+        ))}
       </Stack>
     </Box>
   );

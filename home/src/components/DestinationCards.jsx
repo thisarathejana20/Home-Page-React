@@ -7,6 +7,7 @@ import {
   Stack,
   Grid,
   IconButton,
+  Divider,
 } from "@mui/material";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
@@ -36,39 +37,42 @@ const destinations = [
 
 const DestinationCards = () => {
   return (
-    <Box sx={{ px: { xs: 2, md: 6 }, py: 6 }}>
-      <Stack
-        direction="row"
-        justifyContent="space-between"
-        alignItems="center"
-        mb={3}
-      >
-        <Typography variant="h5" fontWeight={600}>
-          Discover the touch of nature 🌈
-        </Typography>
-        <Box>
-          <IconButton>
-            <ArrowBackIosNewIcon fontSize="small" />
-          </IconButton>
-          <IconButton>
-            <ArrowForwardIosIcon fontSize="small" />
-          </IconButton>
-        </Box>
-      </Stack>
+    <>
+      <Box sx={{ px: { xs: 2, md: 6 }, py: 6 }}>
+        <Stack
+          direction="row"
+          justifyContent="space-between"
+          alignItems="center"
+          mb={3}
+        >
+          <Typography variant="h5" fontWeight={600}>
+            Discover the touch of nature 🌈
+          </Typography>
+          <Box>
+            <IconButton>
+              <ArrowBackIosNewIcon fontSize="small" />
+            </IconButton>
+            <IconButton>
+              <ArrowForwardIosIcon fontSize="small" />
+            </IconButton>
+          </Box>
+        </Stack>
 
-      <Grid container spacing={3} alignContent={"center"}>
-        {destinations.map((item, index) => (
-          <Grid item xs={12} sm={6} md={3} key={index}>
-            <Card sx={{ borderRadius: 4 }}>
-              <CardMedia component="img" image={item.image} height="160" />
-              <CardContent>
-                <Typography fontWeight={600}>{item.name}</Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
-    </Box>
+        <Grid container spacing={3} alignContent={"center"}>
+          {destinations.map((item, index) => (
+            <Grid item xs={12} sm={6} md={3} key={index}>
+              <Card sx={{ borderRadius: 4 }}>
+                <CardMedia component="img" image={item.image} height="160" />
+                <CardContent>
+                  <Typography fontWeight={600}>{item.name}</Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
+      <Divider />
+    </>
   );
 };
 

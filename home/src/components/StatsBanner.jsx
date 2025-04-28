@@ -90,12 +90,7 @@ const StatsBanner = () => {
             Your travel companion that carries <br /> all the information
           </Typography>
           <Box sx={{ mt: 4 }}>
-            <img
-              src="https://images.pexels.com/photos/1089306/pexels-photo-1089306.jpeg?auto=compress&cs=tinysrgb&w=600"
-              alt="Plane"
-              width={250}
-              height={100}
-            />
+            <img src="/plane.svg" alt="Plane" width={250} height={100} />
           </Box>
         </Box>
 
@@ -112,7 +107,7 @@ const StatsBanner = () => {
 
         {/* Floating Clouds - decorations */}
         <img
-          src="https://images.pexels.com/photos/53594/blue-clouds-day-fluffy-53594.jpeg?auto=compress&cs=tinysrgb&w=600"
+          src="/cloud.svg"
           alt="cloud"
           width={80}
           height={50}
@@ -124,7 +119,7 @@ const StatsBanner = () => {
           }}
         />
         <img
-          src="https://images.pexels.com/photos/53594/blue-clouds-day-fluffy-53594.jpeg?auto=compress&cs=tinysrgb&w=600"
+          src="/cloud.svg"
           alt="cloud"
           width={80}
           height={50}

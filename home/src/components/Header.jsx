@@ -29,24 +29,39 @@ const Header = () => {
         elevation={0}
         sx={{ px: 4, py: 2 }}
       >
-        <Toolbar sx={{ justifyContent: "space-between" }}>
-          <Typography variant="h6" sx={{ fontWeight: "bold" }}>
-            Kanra
-          </Typography>
+        <Toolbar
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          {/* Left Section - Logo + Search */}
+          <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+            <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+              Kanra
+            </Typography>
 
-          <Box sx={{ display: "flex", alignItems: "center", gap: 3 }}>
-            <InputBase
-              placeholder="Search destination..."
+            {/* Search Box */}
+            <Box
               sx={{
                 bgcolor: "#f3f4f6",
                 px: 2,
                 py: 0.5,
                 borderRadius: 2,
-                display: { xs: "none", sm: "inline-block" },
+                display: { xs: "none", sm: "flex" },
+                alignItems: "center",
+                gap: 1,
+                minWidth: 250,
               }}
-              startAdornment={<SearchIcon sx={{ mr: 1, color: "#FF6B00" }} />}
-            />
+            >
+              <SearchIcon sx={{ color: "#FF6B00" }} />
+              <InputBase placeholder="Search destination..." sx={{ flex: 1 }} />
+            </Box>
+          </Box>
 
+          {/* Right Section - Menu Items */}
+          <Box sx={{ display: "flex", alignItems: "center", gap: 3 }}>
             <Box sx={{ display: { xs: "none", sm: "flex" }, gap: 3 }}>
               <Button
                 variant="text"
@@ -89,7 +104,7 @@ const Header = () => {
               Get the App
             </Button>
 
-            {/* Hamburger Menu for smaller screens */}
+            {/* Hamburger */}
             <IconButton
               sx={{ display: { xs: "inline-block", sm: "none" } }}
               onClick={toggleDrawer}
