@@ -20,12 +20,7 @@ const FlightDeals = () => {
       {/* Ticket and Text Section */}
       <Box sx={{ flex: 1, zIndex: 2 }}>
         <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
-          <img
-            src="https://images.pexels.com/photos/69866/pexels-photo-69866.jpeg?auto=compress&cs=tinysrgb&w=600"
-            alt="ticket"
-            width={80}
-            height={80}
-          />
+          <img src="/ticket.svg" alt="ticket" width={80} height={80} />
         </Box>
         <Button
           variant="contained"
@@ -57,45 +52,50 @@ const FlightDeals = () => {
       <Box
         sx={{
           position: "absolute",
-          top: { xs: "20%", md: "-10%" },
+          top: { xs: "20%", md: "15%" },
           left: { xs: "30%", md: "45%" },
           width: { xs: 200, md: 300 },
           zIndex: 1,
-          transform: "rotate(20deg)",
+          transform: "rotate(-90deg)",
         }}
       >
-        <img
-          src="https://images.pexels.com/photos/31746666/pexels-photo-31746666/free-photo-of-jet2holidays-plane-on-airport-runway-in-daylight.jpeg?auto=compress&cs=tinysrgb&w=600"
-          alt="plane"
-          width={400}
-          height={400}
-        />
+        <img src="/plane2.svg" alt="plane" width={400} height={400} />
       </Box>
 
       {/* Sponsored Section */}
-      <Box sx={{ flex: 1, textAlign: "right", zIndex: 2 }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "flex-end", // right-align the content
+          justifyContent: "center",
+          zIndex: 2,
+          pr: { xs: 2, md: 6 }, // padding right for spacing from edge
+        }}
+      >
         <Typography
           variant="subtitle1"
           sx={{
             color: "white",
-            mb: 2,
+            mb: 1,
             fontWeight: 600,
           }}
         >
           Sponsored by -
         </Typography>
-        <Box sx={{ display: "inline-flex", alignItems: "center", gap: 2 }}>
-          <img
-            src="https://images.pexels.com/photos/26576975/pexels-photo-26576975/free-photo-of-close-up-of-a-logo-and-sign-on-white-paper-sheet.jpeg?auto=compress&cs=tinysrgb&w=600"
+
+        <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+          <Box
+            component="img"
+            src="/logo.svg"
             alt="hawks"
-            width={100}
-            height={40}
+            sx={{ width: 80, height: "auto" }}
           />
-          <img
-            src="https://images.pexels.com/photos/385997/pexels-photo-385997.jpeg?auto=compress&cs=tinysrgb&w=600"
+          <Box
+            component="img"
+            src="/suitcase.svg"
             alt="suitcase"
-            width={100}
-            height={100}
+            sx={{ width: 80, height: "auto" }}
           />
         </Box>
       </Box>

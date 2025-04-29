@@ -192,7 +192,7 @@ const Footer = () => {
           >
             <Box
               component="img"
-              src="https://seeklogo.com/images/S/stripe-logo-7D3C865A80-seeklogo.com.png"
+              src="/stripe.svg"
               alt="Stripe"
               sx={{ height: 24 }}
             />
@@ -204,7 +204,7 @@ const Footer = () => {
             />
             <Box
               component="img"
-              src="https://upload.wikimedia.org/wikipedia/commons/0/00/WooCommerce_logo_2014_version.svg"
+              src="/woo.svg"
               alt="WooCommerce"
               sx={{ height: 24 }}
             />
